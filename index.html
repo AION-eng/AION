@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>Aetherion (AION) • Solana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Aetherion (AION) — a next-generation digital asset on Solana powering decentralized intelligence and high-frequency computation." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aetherion (AION) • Solana" />
+  <meta property="og:description" content="A next-generation digital asset on Solana." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://<your-username>.github.io/<your-repo>/" />
+  <meta property="og:image" content="https://<your-username>.github.io/<your-repo>/aion-card.png" />
+  <style>
+    :root{
+      --bg:#0a0b10; --card:#12131aee; --muted:#9aa3b2; --fg:#eaf1ff;
+      --accent:#7bd3ff; --accent2:#7effbf; --ring:0 0 0 1px #1b2333, 0 10px 30px #0b1326;
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font:16px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--fg); background: radial-gradient(1000px 600px at 20% -10%, #0e3a57aa, transparent 60%),
+                           radial-gradient(800px 500px at 110% 10%, #104228aa, transparent 55%),
+                           var(--bg);
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1000px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:72px;height:72px;border-radius:50%;background:linear-gradient(180deg,#07121a,#0b1620);
+      display:grid;place-items:center;box-shadow:var(--ring)
+    }
+    h1{margin:0;font-size: clamp(28px, 4vw, 46px);line-height:1.15;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip:text;background-clip:text;color:transparent}
+    .sub{color:var(--muted);margin-top:6px;max-width:780px}
+    .cta{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 30px}
+    .btn{
+      padding:10px 14px;border:1px solid #233040; border-radius:12px; background:#0e1420aa;
+      display:inline-flex;align-items:center;gap:8px; cursor:pointer; transition:.2s;
+    }
+    .btn:hover{transform:translateY(-1px); border-color:#2e425d}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+    .card{
+      grid-column: span 12; background:var(--card); border:1px solid #1b2333; border-radius:var(--radius);
+      padding:18px; box-shadow: var(--ring);
+    }
+    @media(min-width:820px){
+      .card.span6{grid-column: span 6}
+      .card.span4{grid-column: span 4}
+    }
+    .kvs{display:grid;grid-template-columns:120px 1fr;gap:10px;margin:8px 0}
+    .kvs b{color:#cfe6ff}
+    code.badge{
+      user-select:all; display:inline-flex;align-items:center;gap:8px;
+      padding:6px 10px; border-radius:10px; background:#0b1322; border:1px solid #1f2a3d; font-size:13px
+    }
+    footer{opacity:.7;margin:28px 0 10px}
+    .en{opacity:.88}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <!-- Inline SVG logo -->
+      <div class="logo" aria-hidden="true">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="44" y2="44">
+              <stop stop-color="#79D2FF"/><stop offset="1" stop-color="#7EFFC0"/>
+            </linearGradient>
+          </defs>
+          <circle cx="22" cy="22" r="8.5" stroke="url(#g1)" stroke-width="2"/>
+          <ellipse cx="22" cy="22" rx="16" ry="8.5" stroke="url(#g1)" stroke-opacity=".7"/>
+          <ellipse cx="22" cy="22" rx="8.5" ry="16" stroke="url(#g1)" stroke-opacity=".55"/>
+          <circle cx="22" cy="22" r="2.2" fill="url(#g1)"/>
+        </svg>
+      </div>
+      <div>
+        <h1>Aetherion <span class="en">(AION)</span></h1>
+        <div class="sub">
+          面向未来的 Solana 数字资产，驱动去中心化智能与高频计算。<span class="en">A next-gen digital asset on Solana powering decentralized intelligence and high-frequency computation.</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="cta">
+      <a id="solscanLink" class="btn" target="_blank" rel="noopener">🔎 在 Solscan 查看</a>
+      <a id="raydiumLink" class="btn" target="_blank" rel="noopener">💧 在 Raydium 交易</a>
+      <button id="copyMint" class="btn">📋 复制 Mint 地址</button>
+    </div>
+
+    <section class="grid">
+      <div class="card span6">
+        <h3>代币信息 / Token</h3>
+        <div class="kvs"><b>名称 Name</b><div>Aetherion</div></div>
+        <div class="kvs"><b>符号 Symbol</b><div>AION</div></div>
+        <div class="kvs"><b>链 Network</b><div>Solana</div></div>
+        <div class="kvs"><b>小数位 Decimals</b><div id="decimals">6</div></div>
+        <div class="kvs"><b>Mint</b>
+          <div><code id="mintAddr" class="badge">...</code></div>
+        </div>
+        <div class="kvs"><b>总量 Supply</b><div id="supplyTip">待铸造（Mint 后显示 / Will reflect after mint)</div></div>
+      </div>
+
+      <div class="card span6">
+        <h3>愿景 / Vision</h3>
+        <p>通过高性能链上原语，AION 旨在作为 Web3 创新的“能量单元”。<span class="en">AION aims to act as the energy unit for Web3 innovation with scalable tokenomics.</span></p>
+        <ul>
+          <li>⚡ 高吞吐 & 低延迟（Solana）</li>
+          <li>🧠 面向去中心化智能应用</li>
+          <li>🌐 生态友好，易于集成</li>
+        </ul>
+      </div>
+
+      <div class="card span4">
+        <h3>进度 / Status</h3>
+        <ul>
+          <li>✅ 已创建 Mint</li>
+          <li>🟡 待铸造总量 / Mint supply</li>
+          <li>🟡 （可选）撤销增发权限 / Revoke mint authority</li>
+          <li>🟡 建池 / Add liquidity (Raydium)</li>
+        </ul>
+      </div>
+
+      <div class="card span4">
+        <h3>提交 / Listings</h3>
+        <ul>
+          <li>🖼️ Token List（Logo/官网）</li>
+          <li>📈 CoinGecko / CMC（可选）</li>
+          <li>🧭 Jupiter / OKX DEX 聚合自动收录</li>
+        </ul>
+      </div>
+
+      <div class="card span4">
+        <h3>链接 / Links</h3>
+        <ul>
+          <li><a id="explorerLink" target="_blank" rel="noopener">Solana Explorer</a></li>
+          <li><a href="#" id="xLink">Twitter / X</a> · <a href="#" id="tgLink">Telegram</a> · <a href="#" id="siteLink">Website</a></li>
+        </ul>
+      </div>
+
+      <div class="card span12">
+        <h3>说明 / Notes</h3>
+        <p>铸造完成后，如需固定总量，请撤销增发权限（Mint Authority → null）。<span class="en">After minting, revoke mint authority to lock total supply.</span></p>
+      </div>
+    </section>
+
+    <footer>© <span id="year"></span> Aetherion • All rights reserved.</footer>
+  </div>
+
+  <script>
+    // === 配置：把你的 Mint 地址和（可选）Raydium 交易对填进来 ===
+    const MINT = "DUprTB27FUUEJR2p8mrJwfPXZywhaj1mVUgaA2vTqray"; // 你的 Mint
+    const RAYDIUM_PAIR = ""; // 建池后填交易对链接，如 https://raydium.io/swap/?inputMint=...&outputMint=...
+    const DECIMALS = 6;
+
+    // 支持 ?mint=... 覆盖
+    const q = new URLSearchParams(location.search);
+    const mintAddr = q.get("mint") || MINT;
+    const decimals = Number(q.get("decimals") || DECIMALS);
+
+    const $ = s => document.querySelector(s);
+    $("#mintAddr").textContent = mintAddr;
+    $("#decimals").textContent = decimals;
+    $("#year").textContent = new Date().getFullYear();
+
+    const solscan = `https://solscan.io/token/${mintAddr}`;
+    const explorer = `https://explorer.solana.com/address/${mintAddr}`;
+    $("#solscanLink").href = solscan;
+    $("#explorerLink").href = explorer;
+
+    const rayLink = RAYDIUM_PAIR || `https://raydium.io/swap/?inputMint=${mintAddr}&outputMint=So11111111111111111111111111111111111111112`;
+    $("#raydiumLink").href = rayLink;
+
+    $("#copyMint").addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(mintAddr); 
+        const b = $("#copyMint"); const old = b.textContent; b.textContent = "✅ 已复制";
+        setTimeout(()=> b.textContent = old, 1200);
+      } catch(e){ alert("复制失败，请手动选择文本复制"); }
+    });
+  </script>
+</body>
+</html>
